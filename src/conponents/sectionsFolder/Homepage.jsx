@@ -1,9 +1,12 @@
 import React from 'react'
+import '../sectionStyles/homePage.scss'
 
 function Homepage() {
     return (
         <div>
-            <h1>Hem</h1>
+            <section className='first-section'>
+                <h1>Välkomna!!!</h1>
+            </section>
         </div>
     )
 }
