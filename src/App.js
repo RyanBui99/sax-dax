@@ -1,25 +1,39 @@
-import './App.css'
-import React from 'react'
+import './App.scss'
+import React, { useState, useEffect } from 'react'
 import NavBar from './conponents/navbarFolder/NavBar.jsx'
 import {Route, Switch} from 'react-router-dom'
 import Homepage from './conponents/sectionsFolder/Homepage'
 import Contact from './conponents/sectionsFolder/Contact'
 import Booking from './conponents/sectionsFolder/Booking'
+import LoadingScreen from './conponents/LoadingScreen.jsx'
+
 
 function App() {
-  return (
-    <div className="App">
-      <NavBar />
+  const [loading, setLoading] = useState(true)
 
-        <main>
-          <Switch>
-            <Route path='/' exact component={Homepage} title='Home'/>
-            <Route path='/Kontakt'component={Contact} title='Kontakt'/>
-            <Route path='/Boka' component={Booking} title='Boka'/>
-          </Switch>
-        </main>
-    </div>
-  );
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000)
+  }, [])
+
+  return (
+    <>
+      {loading === false ? (
+        <div className="App">
+        <NavBar />
+
+          <main>
+            <Switch>
+              <Route path='/' component={Homepage}  />
+              <Route path='/Kontakt'component={Contact}  />
+              <Route path='/Boka' component={Booking}  />
+            </Switch>
+          </main>
+      </div>
+      ) : (
+        <LoadingScreen />
+      )}
+  </>
+  )
 }
 
 export default App;

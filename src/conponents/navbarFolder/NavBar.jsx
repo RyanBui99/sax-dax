@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import SAXDAX from '../../pictures/saxdax_logo.png'
-import './navbar.scss'
+
 
 function NavBar() {
+    const [navbar, setNavBar] = useState(false)
+
 
     const links = [
         {
@@ -19,6 +21,7 @@ function NavBar() {
             to: '/Kontakt',
             label: "Kontakt",
             activeClassName: "selectedLink"
+            
         },
 
         {
@@ -29,6 +32,16 @@ function NavBar() {
         }
     ]
 
+    const changeBackground = () => {
+        if (window.scrollY >= 85) {
+            setNavBar(true)
+            console.log("current scroll" + window.scrollY)
+        } else {
+            setNavBar(false)
+        }
+    }
+
+    window.addEventListener('scroll', changeBackground)
 
     const mapFunction = links.map((items, id) => {
         return (
@@ -45,7 +58,7 @@ function NavBar() {
     })
 
     return (
-        <nav>
+        <nav className={navbar ? 'nav active' : 'nav'}>
             <img src={SAXDAX} alt="saxdax logo" className='logo'/>
             <ul>
                 {mapFunction}

@@ -1,0 +1,261 @@
+$navbar-color: #141414;
+$font-color: #F7FFF7;
+$back-color: #003049;
+$loading-screen-background: #e5e5e5;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    
+}
+
+html, body {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    background-color: $back-color;
+    font-family: 'Roboto', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* NAVBAR SECTION */
+
+.nav {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 100%;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+    padding-bottom: 5px;
+    position: sticky;
+    z-index: 999;
+    left: 0;
+
+    .logo {
+        width: 90px;
+        height: 90px;
+        align-self: center;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+
+        li {
+            padding-left: 30px;
+            align-self: center;
+            a {
+                text-decoration: none;
+                color: $font-color;
+            }
+        }
+    }
+}
+
+.nav.active {
+    background-color: $navbar-color;
+    transition: background-color 1s;
+}
+
+/* END OF NAVBAR SECTION */
+
+/* HOMEPAGE SECTION */
+
+.home-page-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .first-section {
+        height: 100vh;
+        font-size: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+    
+        .down-arrow-container {
+            position: absolute;
+            bottom: 0;
+
+            a {
+                position: absolute;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 3.5px solid #fff;
+                border-bottom: 3.5px solid #fff;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-animation: sdb05 1.5s infinite;
+                animation: sdb05 1.5s infinite;
+                box-sizing: border-box;
+            }
+
+            @-webkit-keyframes sdb05 {
+                0% {
+                  -webkit-transform: rotate(-45deg) translate(0, 0);
+                  opacity: 0;
+                }
+                50% {
+                  opacity: 1;
+                }
+                100% {
+                  -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+                  opacity: 0;
+                }
+              }
+              @keyframes sdb05 {
+                0% {
+                  transform: rotate(-45deg) translate(0, 0);
+                  opacity: 0;
+                }
+                50% {
+                  opacity: 1;
+                }
+                100% {
+                  transform: rotate(-45deg) translate(-20px, 20px);
+                  opacity: 0;
+                }
+              }
+        }
+    }
+
+    .second-section {
+        height: 32vh;
+        background-color: $navbar-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $font-color;
+
+        .company-greetings {
+          max-width: 1040px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+  
+          .company-header {
+            padding-bottom: 1rem;
+
+            h1 {
+              font-size: 3.5rem;
+            }
+          }
+
+          .about-us{
+            
+            p {
+              font-family: 'Roboto Slab', serif;
+            }
+          }
+        }
+
+        .skills {
+          display: flex;
+          flex-direction: row;
+          margin-top: 2rem;
+          justify-content: center;
+
+          .skills-container {
+            p {
+              padding-top: 20px;
+              font-size: 20px;
+            }
+          }
+        }
+    }
+}
+
+.third-section {
+  height: 100vh;
+  background-color: $font-color;
+}
+
+/* END OF HOMEPAGE SECTION */
+
+/* LOADING SCREEN */
+.barber-container {
+  width:168px;
+  height:612px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.ball{
+  height:44px;
+	width:44px;
+	margin-left:62px;
+	margin-right:62px;
+  border-radius:100px;
+	background-color:#fefbe3;
+}
+
+.end-cap{
+	width:108px;
+	height:30px;
+	margin-left:30px;
+	margin-right:30px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color:#fefbe3;
+}
+
+.cap{
+	width:168px;
+	height:30px;
+	background-color:#fefbe3;
+}
+
+.barber-wrap{
+	height:344px;
+	width:108px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:30px;
+  margin-right:30px;
+
+  .barber{
+    height:344px;
+    width:108px;
+    position: inherit;
+    background:#fefbe3;
+    background-color: -webkit-linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
+    background: -moz-linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
+    background: -o-linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
+    background: linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
+    background-size: 27px 27px;
+    -webkit-animation: barberpole 1.5s infinite linear;
+    animation: barberpole 1.5s infinite linear;
+  }
+}
+
+@keyframes barberpole {
+  from {background-position: 0%;}
+  to {background-position: 100%;}
+}
+
+@-webkit-keyframes barberpole {
+  from {background-position: 0%;}
+  to {background-position: 100%;}
+}
+/* END OF LOADING SCREEN */
+
