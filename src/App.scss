@@ -1,6 +1,7 @@
 $navbar-color: #141414;
 $font-color: #F7FFF7;
 $back-color: #003049;
+$back-color2: white;
 $loading-screen-background: #e5e5e5;
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
@@ -19,7 +20,7 @@ $loading-screen-background: #e5e5e5;
 html, body {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-    background-color: $back-color;
+    background-color: $back-color2;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -60,7 +61,7 @@ body::-webkit-scrollbar {
             align-self: center;
             a {
                 text-decoration: none;
-                color: $font-color;
+                color: $navbar-color;
             }
         }
     }
@@ -68,7 +69,12 @@ body::-webkit-scrollbar {
 
 .nav.active {
     background-color: $navbar-color;
-    transition: background-color 1s;
+    transition: background-color 0.5s;
+
+    a {
+      color: $back-color2;
+      transition: color 0.5s;
+    }
 }
 
 /* END OF NAVBAR SECTION */
@@ -99,8 +105,8 @@ body::-webkit-scrollbar {
                 width: 24px;
                 height: 24px;
                 margin-left: -12px;
-                border-left: 3.5px solid #fff;
-                border-bottom: 3.5px solid #fff;
+                border-left: 3.5px solid $navbar-color;
+                border-bottom: 3.5px solid $navbar-color;
                 -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
                 -webkit-animation: sdb05 1.5s infinite;
@@ -143,7 +149,7 @@ body::-webkit-scrollbar {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: $font-color;
+        color: $back-color2;
 
         .company-greetings {
           max-width: 1040px;
@@ -185,7 +191,7 @@ body::-webkit-scrollbar {
 
 .third-section {
   height: 100vh;
-  background-color: $font-color;
+  background-color: $back-color2;
 }
 
 /* END OF HOMEPAGE SECTION */
@@ -206,7 +212,7 @@ body::-webkit-scrollbar {
 	margin-left:62px;
 	margin-right:62px;
   border-radius:100px;
-	background-color:#fefbe3;
+	background-color: $navbar-color;
 }
 
 .end-cap{
@@ -216,13 +222,13 @@ body::-webkit-scrollbar {
 	margin-right:30px;
 	margin-top:10px;
 	margin-bottom:10px;
-	background-color:#fefbe3;
+	background-color:$navbar-color;
 }
 
 .cap{
 	width:168px;
 	height:30px;
-	background-color:#fefbe3;
+	background-color:$navbar-color;
 }
 
 .barber-wrap{
@@ -237,11 +243,11 @@ body::-webkit-scrollbar {
     height:344px;
     width:108px;
     position: inherit;
-    background:#fefbe3;
-    background-color: -webkit-linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
-    background: -moz-linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
-    background: -o-linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
-    background: linear-gradient(-45deg, transparent 25%, #fefbe3 25%, #fefbe3 50%, transparent 50%, transparent 75%, #fefbe3 75%);
+    background:$navbar-color;
+    background-color: -webkit-linear-gradient(-45deg, transparent 25%, $navbar-color 25%, $navbar-color 50%, transparent 50%, transparent 75%, $navbar-color 75%);
+    background: -moz-linear-gradient(-45deg, transparent 25%, $navbar-color 25%, $navbar-color 50%, transparent 50%, transparent 75%, $navbar-color 75%);
+    background: -o-linear-gradient(-45deg, transparent 25%, $navbar-color 25%, $navbar-color 50%, transparent 50%, transparent 75%, $navbar-color 75%);
+    background: linear-gradient(-45deg, transparent 25%, $navbar-color 25%, $navbar-color 50%, transparent 50%, transparent 75%, $navbar-color 75%);
     background-size: 27px 27px;
     -webkit-animation: barberpole 1.5s infinite linear;
     animation: barberpole 1.5s infinite linear;

@@ -6,7 +6,6 @@ import SAXDAX from '../../pictures/saxdax_logo.png'
 function NavBar() {
     const [navbar, setNavBar] = useState(false)
 
-
     const links = [
         {
             id: 1,
